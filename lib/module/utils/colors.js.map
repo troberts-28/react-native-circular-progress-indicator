@@ -1,0 +1,1 @@
+{"version":3,"names":["COLORS","TRANSPARENT","GREEN","BLACK_30","WHITE"],"sourceRoot":"../../src","sources":["colors.ts"],"mappings":"AAAA,MAAMA,MAAM,GAAG;EACbC,WAAW,EAAE,aAAa;EAC1BC,KAAK,EAAE,SAAS;EAChBC,QAAQ,EAAE,iBAAiB;EAC3BC,KAAK,EAAE;AACT,CAAC;AAED,eAAeJ,MAAM"}
