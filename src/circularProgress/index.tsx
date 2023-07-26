@@ -4,8 +4,8 @@ import { Text, StyleSheet, View } from 'react-native';
 import ProgressCircle from '../components/progressCircle';
 import useAnimatedValue from '../hooks/useAnimatedValue';
 import COLORS from '../utils/colors';
-import type { CircularProgressProps, ProgressRef } from '../types';
 import ProgressValue from '../components/progressValue';
+import type { CircularProgressProps, ProgressRef } from '../types';
 
 import styles from './styles';
 
@@ -54,6 +54,7 @@ const CircularProgress = forwardRef<ProgressRef, CircularProgressProps>(
       valuePrefixStyle = {},
       valueSuffixStyle = {},
       strokeColorConfig = undefined,
+      easing,
     } = props;
 
     const {
@@ -77,6 +78,7 @@ const CircularProgress = forwardRef<ProgressRef, CircularProgressProps>(
       inActiveStrokeWidth,
       progressFormatter,
       strokeColorConfig,
+      easing,
     });
 
     useImperativeHandle(ref, () => ({

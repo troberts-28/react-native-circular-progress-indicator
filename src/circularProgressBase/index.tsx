@@ -31,6 +31,7 @@ const CircularProgressBase = forwardRef<ProgressRef, CircularProgressBaseProps>(
       rotation = 0,
       dashedStrokeConfig = { count: 0, width: 0 },
       strokeColorConfig = undefined,
+      easing,
       children,
     } = props;
 
@@ -47,6 +48,7 @@ const CircularProgressBase = forwardRef<ProgressRef, CircularProgressBaseProps>(
       activeStrokeWidth,
       inActiveStrokeWidth,
       strokeColorConfig,
+      easing,
     });
 
     useImperativeHandle(ref, () => ({
