@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { TextInputProps, TextStyle } from 'react-native';
+import type { EasingFunction, TextInputProps, TextStyle } from 'react-native';
 import type { AnimateProps } from 'react-native-reanimated';
 import type Animated from 'react-native-reanimated';
 import type { CircleProps } from 'react-native-svg';
@@ -186,6 +186,10 @@ interface BaseCircularProgressProps extends BaseProgressCircleProps {
    * @default 0
    */
   rotation?: number;
+  /**
+   * easing for the progress animation (defaults to Easing.linear)
+   */
+  easing?: EasingFunction;
 }
 
 interface CircularProgressBaseProps extends BaseCircularProgressProps {

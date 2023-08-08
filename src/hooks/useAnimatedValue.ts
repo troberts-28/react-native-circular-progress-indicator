@@ -12,6 +12,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import { withPause } from 'react-native-redash';
+import type { EasingFunction } from 'react-native';
 
 import type { StrokeColorConfigType } from '../types';
 
@@ -34,6 +35,7 @@ export interface UseAnimatedValueProps {
   // eslint-disable-next-line no-unused-vars
   progressFormatter?: (v: number) => number | string;
   strokeColorConfig?: StrokeColorConfigType[];
+  easing?: EasingFunction;
 }
 
 type Config = {
@@ -59,6 +61,7 @@ export default function useAnimatedValue({
     return Math.round(v);
   },
   strokeColorConfig = undefined,
+  easing = Easing.linear,
 }: UseAnimatedValueProps) {
   const paused = useSharedValue(<boolean>startInPausedState);
   const animatedValue = useSharedValue(initialValue);
@@ -88,7 +91,7 @@ export default function useAnimatedValue({
     animatedValue.value = withPause(
       withDelay(
         delay,
-        withTiming(value, { duration, easing: Easing.linear }, isFinished => {
+        withTiming(value, { duration, easing }, isFinished => {
           if (isFinished) {
             runOnJS(onAnimationComplete)?.();
           }
